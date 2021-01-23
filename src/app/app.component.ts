@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
     this.initNumbers();
     this.whitePicks = [];
     this.megaPick = null;
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 5; i++) {
       this.generateWhite();
     }
     this.generateMega();

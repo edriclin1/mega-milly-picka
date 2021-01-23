@@ -48,15 +48,15 @@ export class AppComponent implements OnInit {
   }
 
   generateWhite() {
-    const whitePick = Math.floor(Math.random() * 6) + 1;
+    const whitePick = this.whites[Math.floor(Math.random() * this.whites.length)];
     this.whitePicks.push(whitePick);
-    this.removePick(this.whites, whitePick);
+    this.whites = this.removePick(this.whites, whitePick);
   }
 
   generateMega() {
-    const megaPick = Math.floor(Math.random() * 25) + 1;
+    const megaPick = this.megas[Math.floor(Math.random() * this.megas.length)];
     this.megaPick = megaPick;
-    this.removePick(this.megas, megaPick);
+    this.megas = this.removePick(this.megas, megaPick);
   }
 
   removePick(list: number[], pick: number) {
@@ -65,5 +65,6 @@ export class AppComponent implements OnInit {
         list.splice(i--, 1);
       }
     }
+    return list;
   }
 }

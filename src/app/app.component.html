@@ -16,18 +16,19 @@
     src="https://i.imgur.com/tOpdYSn.png"
   />
   <div class="margin-top">
-    <div class="bold margin-bottom">Your Numbers</div>
-    <span class="big" *ngFor="let white of whitePicks">{{white}} </span>
+    <div class="bold margin-bottom">Your Picks</div>
+    <span class="big" *ngIf="whitePicks.length == 0">_&nbsp;&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;_&nbsp;&nbsp;&nbsp;</span>
+    <span class="big" *ngFor="let white of whitePicks">{{white}}&nbsp;&nbsp;</span>
     <span class="big bold">{{megaPick}}</span>
   </div>
 
   <div class="margin-top">
-    <div class="bold margin-bottom">Whites Remaining</div>
+    <div class="bold margin-bottom">White Picks Remaining</div>
     <span *ngFor="let white of whites">{{white}} </span>
   </div>
 
   <div class="margin-top">
-    <div class="bold margin-bottom">Megas Remaining</div>
+    <div class="bold margin-bottom">Mega Picks Remaining</div>
     <span *ngFor="let mega of megas">{{mega}} </span>
   </div>
 </div>
